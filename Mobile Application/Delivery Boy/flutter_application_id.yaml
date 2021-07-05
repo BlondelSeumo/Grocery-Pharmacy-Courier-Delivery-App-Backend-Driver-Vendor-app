@@ -1,0 +1,7 @@
+flutter_application_id:
+  android:
+    id: "com.edentech.fuodzdeliveryboy"
+    name: "Fuodz Delivery Boy"
+  ios:
+    id: "com.edentech.fuodzdeliveryboy"
+    name: "Fuodz Delivery Boy"

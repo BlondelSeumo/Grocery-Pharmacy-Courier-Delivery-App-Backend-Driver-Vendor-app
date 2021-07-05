@@ -1,0 +1,7 @@
+flutter_application_id:
+  android:
+    id: "com.edentech.fuodzvendor"
+    name: "Fuodz Vendor"
+  ios:
+    id: "com.edentech.fuodzvendor"
+    name: "Fuodz Vendor"
