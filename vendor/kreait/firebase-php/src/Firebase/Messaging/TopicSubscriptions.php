@@ -1,0 +1,43 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Kreait\Firebase\Messaging;
+
+use Countable;
+use IteratorAggregate;
+use Traversable;
+
+/**
+ * @implements IteratorAggregate<TopicSubscription>
+ */
+final class TopicSubscriptions implements Countable, IteratorAggregate
+{
+    /** @var TopicSubscription[] */
+    private $subscriptions;
+
+    public function __construct(TopicSubscription ...$subscriptions)
+    {
+        $this->subscriptions = $subscriptions;
+    }
+
+    public function filter(callable $filter): self
+    {
+        return new self(...\array_filter($this->subscriptions, $filter));
+    }
+
+    /**
+     * @codeCoverageIgnore
+     *
+     * @return Traversable<TopicSubscription>|TopicSubscription[]
+     */
+    public function getIterator()
+    {
+        yield from $this->subscriptions;
+    }
+
+    public function count(): int
+    {
+        return \count($this->subscriptions);
+    }
+}

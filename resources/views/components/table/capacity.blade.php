@@ -1,0 +1,1 @@
+{{ $model->capacity ?? '' }} {{ $model->unit ?? '' }}
